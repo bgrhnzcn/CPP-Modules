@@ -1,9 +1,29 @@
 #include "Contact.hpp"
 #include <iostream>
+#include <iomanip>
 
-void Contact::print(int index)
+std::string Contact::limitStr(std::string str)
 {
-	std::cout << index << ", " << name << ", " << surname << ", " << nickname << std::endl;
+	if (str.length() > 10)
+		return str.substr(0, 9) + ".";
+	return str;
+}
+
+void Contact::display()
+{
+	std::cout << "Name: " << name << std::endl
+			  << "Surname: " << surname << std::endl
+			  << "Nickname: " << nickname << std::endl
+			  << "Phone: " << phone << std::endl
+			  << "Secret: " << secret << std::endl;
+}
+
+void Contact::printIndexed(int index)
+{
+	std::cout << "|" << std::setw(1) << index << "|" << std::flush
+			  << std::setw(10) << limitStr(name) << "|" << std::flush
+			  << std::setw(10) << limitStr(surname) << "|" << std::flush
+			  << std::setw(10) << limitStr(nickname) << "|" << std::endl;
 }
 
 Contact::Contact(std::string name, std::string surname, std::string nickname, std::string phone, std::string secret)
