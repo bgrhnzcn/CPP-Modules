@@ -12,8 +12,8 @@ private:
 	std::string nickname;
 	std::string phone;
 	std::string secret;
+
 public:
-	void print(int index);
 	Contact();
 	Contact(std::string name,
 			std::string surname,
@@ -21,6 +21,12 @@ public:
 			std::string phone,
 			std::string secret);
 	~Contact();
+
+public:
+	void display();
+	void printIndexed(int index);
+	std::string limitStr(std::string str);
+
 };
 
 #endif
