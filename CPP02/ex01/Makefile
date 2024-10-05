@@ -1,10 +1,10 @@
-NAME = tests
+NAME = fixed
 
 CC = c++
 
 CC_FLAGS = -std=c++98 -pedantic -Wall -Werror -Wextra
 
-SRCS = tests.cpp Account.cpp
+SRCS = main.cpp Fixed.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -25,3 +25,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: re fclean clean all
+

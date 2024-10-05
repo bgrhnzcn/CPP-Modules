@@ -1,10 +1,10 @@
-NAME = tests
+NAME = violance
 
 CC = c++
 
 CC_FLAGS = -std=c++98 -pedantic -Wall -Werror -Wextra
 
-SRCS = tests.cpp Account.cpp
+SRCS = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
