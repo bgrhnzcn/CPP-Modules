@@ -1,44 +1,57 @@
-#include "Contact.hpp"
 #include <iostream>
 #include <iomanip>
 
-std::string Contact::limitStr(std::string str)
+#include "Contact.hpp"
+
+int Contact::setContact()
 {
-	if (str.length() > 10)
-		return str.substr(0, 9) + ".";
-	return str;
+    std::cout << "First Name: ";
+    std::getline(std::cin, firstName);
+    if (std::cin.eof())
+        return (std::cout << std::endl, 1);
+    std::cout << "Last Name: ";
+    std::getline(std::cin, lastName);
+    if (std::cin.eof())
+        return (std::cout << std::endl, 1);
+    std::cout << "Nickname: ";
+    std::getline(std::cin, nickName);
+    if (std::cin.eof())
+        return (std::cout << std::endl, 1);
+    std::cout << "Phone Number: ";
+    std::getline(std::cin, phoneNumber);
+    if (std::cin.eof())
+        return (std::cout << std::endl, 1);
+    std::cout << "Darkest Secret: ";
+    std::getline(std::cin, darkestSecret);
+    if (std::cin.eof())
+        return (std::cout << std::endl, 1);
+    if (firstName == "" || lastName == "" || nickName == "" || phoneNumber == "" || darkestSecret == "")
+        return (std::cout << "Invalid argument!\n", 1);
+    return 0;
 }
 
-void Contact::display()
+void Contact::displayShort(int index) const
 {
-	std::cout << "Name: " << name << std::endl
-			  << "Surname: " << surname << std::endl
-			  << "Nickname: " << nickname << std::endl
-			  << "Phone: " << phone << std::endl
-			  << "Secret: " << secret << std::endl;
+    std::cout << "|" << std::setw(10) << index << "|";
+    printField(firstName);
+    printField(lastName);
+    printField(nickName);
+    std::cout << std::endl;
 }
 
-void Contact::printIndexed(int index)
+void Contact::displayFull() const
 {
-	std::cout << "|" << std::setw(1) << index << "|" << std::flush
-			  << std::setw(10) << limitStr(name) << "|" << std::flush
-			  << std::setw(10) << limitStr(surname) << "|" << std::flush
-			  << std::setw(10) << limitStr(nickname) << "|" << std::endl;
+    std::cout << "First Name: " << firstName << std::endl;
+    std::cout << "Last Name: " << lastName << std::endl;
+    std::cout << "Nickname: " << nickName << std::endl;
+    std::cout << "Phone Number: " << phoneNumber << std::endl;
+    std::cout << "Darkest Secret: " << darkestSecret << std::endl;
 }
 
-Contact::Contact(std::string name, std::string surname, std::string nickname, std::string phone, std::string secret)
+void Contact::printField(const std::string &field) const
 {
-	this->name = name;
-	this->surname = surname;
-	this->nickname = nickname;
-	this->phone = phone;
-	this->secret = secret;
-}
-
-Contact::~Contact()
-{
-}
-
-Contact::Contact()
-{
+    if (field.length() > 10)
+        std::cout << field.substr(0, 9) + ".|";
+    else
+        std::cout << std::setw(10) << field << "|";
 }

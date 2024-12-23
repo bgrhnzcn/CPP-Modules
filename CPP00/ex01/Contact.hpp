@@ -7,26 +7,19 @@
 class Contact
 {
 private:
-	std::string name;
-	std::string surname;
-	std::string nickname;
-	std::string phone;
-	std::string secret;
+    std::string firstName;
+    std::string lastName;
+    std::string nickName;
+    std::string phoneNumber;
+    std::string darkestSecret;
 
 public:
-	Contact();
-	Contact(std::string name,
-			std::string surname,
-			std::string nickname,
-			std::string phone,
-			std::string secret);
-	~Contact();
+    int setContact();
+    void displayShort(int index) const;
+    void displayFull() const;
 
-public:
-	void display();
-	void printIndexed(int index);
-	std::string limitStr(std::string str);
-
+private:
+    void printField(const std::string &field) const;
 };
 
 #endif
