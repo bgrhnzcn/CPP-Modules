@@ -1,6 +1,6 @@
 #include "Zombie.hpp"
 
-Zombie*	zombieHorde(int n, std::string name);
+Zombie*	zombieHorde(int n, const std::string &name);
 
 int	main(void)
 {
@@ -10,3 +10,4 @@ int	main(void)
 		horde[i].announce();
 	delete []horde;
 }
+

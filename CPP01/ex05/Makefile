@@ -1,8 +1,8 @@
-NAME = file
+NAME = harl
 
 CC = c++
 
-CC_FLAGS = -std=c++98 -pedantic -Wall -Werror -Wextra
+CC_FLAGS = -std=c++98 -Wall -Werror -Wextra
 
 SRCS = main.cpp Harl.cpp
 

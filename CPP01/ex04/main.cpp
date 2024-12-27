@@ -2,10 +2,10 @@
 #include <iostream>
 #include <fstream>
 
-int replace(char **argv, std::string str)
+int replace(char **argv, std::string &str)
 {
-	std::ofstream	stream;
-	int				a;
+	std::ofstream stream;
+	int a;
 
 	stream.open((std::string(argv[1]) + ".replace").c_str());
 	if (!stream.is_open())
@@ -41,3 +41,4 @@ int main(int argc, char** argv)
 		str += c;
 	return (replace(argv, str));
 }
+

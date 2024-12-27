@@ -11,3 +11,4 @@ int	main(void)
 	randomChump("Champ");
 	delete zombie;
 }
+

@@ -2,7 +2,7 @@ NAME = brainz
 
 CC = c++
 
-CC_FLAGS = -std=c++98 -pedantic -Wall -Werror -Wextra
+CC_FLAGS = -std=c++98 -Wall -Werror -Wextra
 
 SRCS = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 

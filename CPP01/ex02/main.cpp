@@ -15,3 +15,4 @@ int	main(void)
 	std::cout << *stringPTR << std::endl;
 	std::cout << stringREF << std::endl;
 }
+

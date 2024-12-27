@@ -46,16 +46,21 @@ void Harl::error(void)
 
 void Harl::complain(std::string level)
 {
+	bool is_print = false;
 	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	void (Harl::*funcs[4])(void) = {&Harl::debug, &Harl::info,
-									&Harl::warning, &Harl::error};
-	
-	for (size_t i = 0; i < 4; i++)
+
+	for (size_t i = 0;i < 4; ++i)
 	{
 		if (level == levels[i])
-		{
-			(this->*funcs[i])();
-			break;
-		}
-	}
+			is_print = true;
+		if (is_print)
+			switch (i)
+			{
+				case 0: debug();break;
+				 case 1: info();break;
+				  case 2: warning();break;
+				   case 3: error(); break;
+			}
+	}	
 }
+

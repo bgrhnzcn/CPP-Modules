@@ -1,15 +1,15 @@
 #pragma once
 #ifndef HARL_HPP
-#define HARL_HPP
+#	define HARL_HPP
 
-#include <iostream>
-#include <string>
+#	include <iostream>
+#	include <string>
 
-#define DEFAULT "\001\033[0;39m\002"
-#define CYAN "\001\033[1;96m\002"
-#define GRAY "\001\033[1;90m\002"
-#define YELLOW "\001\033[1;93m\002"
-#define RED "\001\033[1;91m\002"
+#	define DEFAULT "\001\033[0;39m\002"
+#	define CYAN "\001\033[1;96m\002"
+#	define GRAY "\001\033[1;90m\002"
+#	define YELLOW "\001\033[1;93m\002"
+#	define RED "\001\033[1;91m\002"
 
 class Harl
 {
@@ -25,3 +25,4 @@ public:
 };
 
 #endif //HARL_HPP
+
