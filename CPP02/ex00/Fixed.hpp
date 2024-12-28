@@ -1,22 +1,20 @@
-#pragma once
 #ifndef FIXED_HPP
-#define FIXED_HPP
+# define FIXED_HPP
 
 class Fixed
 {
-private:
-	static const int fract = 8;
-	int fixed_val;
-
-public:
+public: // Constructers
 	Fixed();
-	Fixed(const Fixed& fixed);
+	Fixed(const Fixed &other);
 	~Fixed();
-	Fixed& operator=(const Fixed& fixed);
-
-public:
+public: // Operators
+	Fixed &operator=(const Fixed &other);
+public: // Functions
 	int getRawBits(void) const;
 	void setRawBits(const int raw);
+private:
+	int bits;
+	static const int fract = 8;
 };
 
 #endif

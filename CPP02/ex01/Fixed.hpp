@@ -1,25 +1,28 @@
-#pragma once
 #ifndef FIXED_HPP
-#define FIXED_HPP
+# define FIXED_HPP
+
+#include <iostream>
 
 class Fixed
 {
-private:
-	static const int fract = 8;
-	int fixed_val;
-
-public:
+public: // Constructers
 	Fixed();
-	Fixed(const Fixed& fixed);
-	Fixed(const int val);
-	Fixed(const float val);
+	Fixed(const Fixed &other);
+	Fixed(const int value);
+	Fixed(const float value);
 	~Fixed();
-	operator float();
-	Fixed& operator=(const Fixed& fixed);
-
-public:
+public: // Operators
+	Fixed &operator=(const Fixed &other);
+public: // Functions
 	int getRawBits(void) const;
 	void setRawBits(const int raw);
+	float toFloat(void) const;
+	int toInt(void) const;
+private:
+	int bits;
+	static const int fract = 8;
 };
+
+std::ostream& operator<<(std::ostream& os, const Fixed& fixedPoint);
 
 #endif
