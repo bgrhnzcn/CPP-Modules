@@ -11,9 +11,11 @@ public:
 	Point(const Point &other);
 	~Point();
 	Point &operator=(const Point &other);
+	float getX() const;
+	float getY() const;
 private:
-	const Fixed x;
-	const Fixed y;
+	const float x;
+	const float y;
 };
 
 #endif

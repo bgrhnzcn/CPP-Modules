@@ -41,42 +41,42 @@ Fixed &Fixed::operator=(const Fixed &other)
 
 bool Fixed::operator<(const Fixed &other) const
 {
-	if (this->toFloat() < other.toFloat())
+	if (this->getRawBits() < other.getRawBits())
 		return true;
 	return false;
 }
 
 bool Fixed::operator>(const Fixed &other) const
 {
-	if (this->toFloat() > other.toFloat())
+	if (this->getRawBits() > other.getRawBits())
 		return true;
 	return false;
 }
 
 bool Fixed::operator<=(const Fixed &other) const
 {
-	if (this->toFloat() <= other.toFloat())
+	if (this->getRawBits() <= other.getRawBits())
 		return true;
 	return false;
 }
 
 bool Fixed::operator>=(const Fixed &other) const
 {
-	if (this->toFloat() >= other.toFloat())
+	if (this->getRawBits() >= other.getRawBits())
 		return true;
 	return false;
 }
 
 bool Fixed::operator==(const Fixed &other) const
 {
-	if (this->toFloat() == other.toFloat())
+	if (this->getRawBits() == other.getRawBits())
 		return true;
 	return false;
 }
 
 bool Fixed::operator!=(const Fixed &other) const
 {
-	if (this->toFloat() != other.toFloat())
+	if (this->getRawBits() != other.getRawBits())
 		return true;
 	return false;
 }

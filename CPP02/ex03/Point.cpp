@@ -25,3 +25,13 @@ Point::~Point()
 {
 
 }
+
+float Point::getX() const
+{
+	return (x);
+}
+
+float Point::getY() const
+{
+	return (y);
+}
