@@ -7,7 +7,7 @@ ScavTrap::ScavTrap()
 {
 	this->m_energyPoint = 50;
 	this->m_attackDamage = 20;
-	std::cout << GREEN "Default Constructor called for ScavTrap" CLEAR << std::endl;
+	std::cout << m_name << ": " GREEN "Default Constructor called for ScavTrap" CLEAR << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other)
@@ -15,7 +15,7 @@ ScavTrap::ScavTrap(const ScavTrap& other)
 {
 	this->m_energyPoint = 50;
 	this->m_attackDamage = 20;
-	std::cout << GREEN "Copy Constructor called for ScavTrap" CLEAR << std::endl;
+	std::cout << m_name << ": " GREEN "Copy Constructor called for ScavTrap" CLEAR << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string& name)
@@ -23,28 +23,25 @@ ScavTrap::ScavTrap(const std::string& name)
 {
 	this->m_energyPoint = 50;
 	this->m_attackDamage = 20;
-	std::cout << GREEN "Special Constructor called for ScavTrap" CLEAR << std::endl;
+	std::cout << m_name << ": " GREEN "Special Constructor called for ScavTrap" CLEAR << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << RED "Desctructor called for ScavTrap" CLEAR << std::endl;
+	std::cout << m_name << ": " RED "Desctructor called for ScavTrap" CLEAR << std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 {
 	m_name = other.m_name;
-	m_healthPoint = other.m_healthPoint;
+	m_hitPoint = other.m_hitPoint;
 	m_energyPoint = other.m_energyPoint;
 	m_attackDamage = other.m_attackDamage;
-	std::cout << GREEN "Copy Assignment Operator Called for ScavTrap" << CLEAR << std::endl;
+	std::cout << m_name << ": " GREEN "Copy Assignment Operator Called for ScavTrap" << CLEAR << std::endl;
 	return *this;
 }
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap "
-			  << m_name
-			  << " is now in Gate keeper mode."
-			  << std::endl;
+	std::cout << m_name << ": ScavTrap is now in Gate keeper mode." << std::endl;
 }

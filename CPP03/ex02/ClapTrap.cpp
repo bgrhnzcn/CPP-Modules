@@ -4,37 +4,40 @@
 
 // Constructors
 ClapTrap::ClapTrap()
-	: m_name("Default"), m_healthPoint(100), m_energyPoint(10), m_attackDamage(0)
+	: m_name("Default"), m_hitPoint(100), m_energyPoint(10), m_attackDamage(0)
 {
-	std::cout << GREEN "Default Constructor called of ClapTrap" CLEAR << std::endl;
+	std::cout << m_name << ": " GREEN "Default Constructor called of ClapTrap" CLEAR << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
-	: m_name(other.m_name), m_healthPoint(other.m_healthPoint)
+	: m_name(other.m_name), m_hitPoint(other.m_hitPoint)
 	, m_energyPoint(other.m_energyPoint), m_attackDamage(other.m_attackDamage)
 {
-	std::cout << GREEN "Copy Constructor called of ClapTrap" CLEAR << std::endl;
+	std::cout << m_name << ": " GREEN "Copy Constructor called of ClapTrap" CLEAR << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string& name)
-	: m_name(name), m_healthPoint(100), m_energyPoint(10), m_attackDamage(0)
+	: m_name(name), m_hitPoint(100), m_energyPoint(10), m_attackDamage(0)
 {
-	std::cout << GREEN "Special Constructor called of ClapTrap" CLEAR << std::endl;
+	std::cout << m_name << ": " GREEN "Special Constructor called of ClapTrap" CLEAR << std::endl;
 }
 
 // Destructor
 ClapTrap::~ClapTrap()
 {
-	std::cout << RED "Destructor called of ClapTrap" CLEAR << std::endl;
+	std::cout << m_name << ": " RED "Destructor called of ClapTrap" CLEAR << std::endl;
 }
 
 // Operators
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
-	m_name = other.m_name;
-	m_attackDamage = other.m_attackDamage;
-	m_energyPoint = other.m_energyPoint;
-	m_attackDamage = other.m_attackDamage;
+	if (this != &other)
+	{
+		m_name = other.m_name;
+		m_hitPoint = other.m_hitPoint;
+		m_energyPoint = other.m_energyPoint;
+		m_attackDamage = other.m_attackDamage;
+	}
 	return *this;
 }
 

@@ -25,7 +25,7 @@ class ClapTrap
 		void beRepair(unsigned int amount);
 	protected:
 		std::string m_name;
-		int m_healthPoint;
+		int m_hitPoint;
 		int m_energyPoint;
 		unsigned int m_attackDamage;
 };
