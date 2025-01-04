@@ -1,13 +1,3 @@
 *.o
 .vscode/
-horde
-ref
-brainz
-tests
-phonebook
-megaphone
-violance
-file
-harl
-harlFilter
-fixed
+
