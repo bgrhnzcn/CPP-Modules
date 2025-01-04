@@ -25,7 +25,9 @@ class ClapTrap
 	public: // Member Functions
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
-		void beRepair(unsigned int amount);
+		void beRepaired(unsigned int amount);
+	public:
+		void setAttackDamage(unsigned int amount);
 	private: //Fields
 		std::string m_name;
 		unsigned int m_hitPoint;

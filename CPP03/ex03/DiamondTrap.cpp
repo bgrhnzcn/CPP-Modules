@@ -41,3 +41,9 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other)
 	return *this;
 }
 
+void DiamondTrap::test()
+{
+	std::cout << this->FragTrap::m_name << std::endl;
+	this->ScavTrap::m_name = "Faata";
+	std::cout << this->FragTrap::m_name << std::endl;
+}

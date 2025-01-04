@@ -27,4 +27,5 @@ int main()
 	dia.guardGate();
 	DiamondTrap dia2(dia);
 	dia2.attack("QQQQ");
+	dia2.test();
 }

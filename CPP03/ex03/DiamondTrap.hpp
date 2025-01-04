@@ -18,6 +18,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 	public:
 		// Operators
 		DiamondTrap &operator=(const DiamondTrap& other);
+		void test();
 	private:
 		std::string m_name;
 };

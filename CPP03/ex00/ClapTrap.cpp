@@ -74,27 +74,27 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (m_hitPoint >= amount)
 	{
-		m_hitPoint -= amount;
 		std::cout << RED "ClapTrap "
 			  << m_name
 			  << " took "
 			  << amount
 			  << " damage!" CLEAR
 			  << std::endl;
+		m_hitPoint -= amount;
 	}
 	else
 	{
-		m_hitPoint = 0;
 		std::cout << RED "ClapTrap "
 			  << m_name
 			  << " took "
-			  << amount - m_hitPoint
+			  << m_hitPoint
 			  << " damage!" CLEAR
 			  << std::endl;
+		m_hitPoint = 0;
 	}
 }
 
-void ClapTrap::beRepair(unsigned int amount)
+void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (m_hitPoint == 0)
 		std::cout
@@ -126,3 +126,7 @@ void ClapTrap::beRepair(unsigned int amount)
 	}
 }
 
+void ClapTrap::setAttackDamage(unsigned int amount)
+{
+	m_attackDamage = amount;
+}
