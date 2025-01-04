@@ -4,8 +4,8 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed()
+	: bits(0)
 {
-	bits = 0;
 	std::cout << "Default constructor called" << std::endl;
 }
 

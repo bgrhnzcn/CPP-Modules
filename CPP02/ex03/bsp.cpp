@@ -1,16 +1,17 @@
 #include "Point.hpp"
 
-static float	line(Point const a, Point const b, Point const c)
+static Fixed	det(const Point a, const Point b, const Point c)
 {
 	return (b.getY() - a.getY()) * (c.getX() - a.getX()) - (b.getX() - a.getX()) * (c.getY() - a.getY());
 }
 
 bool bsp( Point const a, Point const b, Point const c, Point const point)
 {
-	float fAB = line(a, b, point);
-	float fBC = line(b, c, point);
-	float fCA = line(c, a, point);
-	if (fAB == 0 || fBC == 0 || fCA == 0)
+	Fixed area = det(a, b, c);
+	Fixed ABP = det(a, b, point);
+	Fixed BCP = det(b, c, point);
+	Fixed CAP = det(c, a, point);
+	if (ABP == 0 || BCP == 0 || CAP == 0)
 		return false;
-	return (fAB >= 0 && fBC >= 0 && fCA >= 0) || (fAB <= 0 && fBC <= 0 && fCA <= 0);
+	return (ABP >= 0 && BCP >= 0 && CAP >= 0) || (ABP <= 0 && BCP <= 0 && CAP <= 0);
 }

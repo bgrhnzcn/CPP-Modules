@@ -5,7 +5,7 @@ Point::Point()
 {
 }
 
-Point::Point(const float x, const float y)
+Point::Point(const Fixed x, const Fixed y)
 	: x(x), y(y)
 {
 }
@@ -26,12 +26,12 @@ Point::~Point()
 
 }
 
-float Point::getX() const
+Fixed Point::getX() const
 {
 	return (x);
 }
 
-float Point::getY() const
+Fixed Point::getY() const
 {
 	return (y);
 }
