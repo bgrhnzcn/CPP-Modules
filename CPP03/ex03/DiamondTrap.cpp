@@ -4,14 +4,17 @@
 
 // Constructors
 DiamondTrap::DiamondTrap()
-	: ClapTrap(), m_name("Default")
+	: ScavTrap(), FragTrap(), m_name("Default")
 {
 	ClapTrap::m_name = m_name + "_clap_name";
+	m_attackDamage = FragTrap::m_attackDamage;
+	m_hitPoint = FragTrap::m_hitPoint;
+	m_energyPoint = ScavTrap::m_energyPoint;
 	std::cout << m_name << ": " GREEN "Default Constructor called of DiamondTrap" CLEAR << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& other)
-	: ClapTrap(other), ScavTrap(other), FragTrap(other), m_name(other.m_name)
+	: ScavTrap(other), FragTrap(other), m_name(other.m_name)
 {
 	std::cout << m_name << ": " GREEN "Copy Constructor called of DiamondTrap" CLEAR << std::endl;
 }
