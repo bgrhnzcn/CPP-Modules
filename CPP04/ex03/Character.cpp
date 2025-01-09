@@ -1,0 +1,67 @@
+#include "Character.hpp"
+#include "AMateria.hpp"
+
+Character::Character()
+	: name("Default")
+{
+	for (int i = 0; i < 4; i++)
+		inventory[i] = NULL;
+}
+
+Character::Character(const Character& other)
+{
+	for (int i = 0; i < 4; i++)
+		inventory[i] = NULL;
+	*this = other;
+}
+
+Character::Character(const std::string& name)
+	: name(name)
+{
+	for (int i = 0; i < 4; i++)
+		inventory[i] = NULL;
+}
+
+Character::~Character()
+{
+	for (int i = 0; i < 4; i++)
+		if (inventory[i] != NULL)
+			delete inventory[i];
+}
+
+Character& Character::operator=(const Character& other)
+{
+	for (int i = 0; i < 4; i++)
+		if (inventory[i] != NULL)
+			delete inventory[i];
+	for (int i = 0; i < 4; i++)
+		if (other.inventory[i] != NULL)
+			inventory[i] = other.inventory[i]->clone();
+	return (*this);
+}
+
+void Character::equip(AMateria* m)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		if (inventory[i] != NULL)
+		{
+			inventory[i] = m;
+			break ;
+		}
+	}
+}
+
+void Character::unequip(int idx)
+{
+	if (idx >= 0 && inventory[idx] != NULL)
+		inventory[idx] = NULL;
+	// THERE IS LEAK IN THIS LINE //
+}
+
+void Character::use(int idx, ICharacter& target)
+{
+	if (idx >= 0 && inventory[idx] != NULL)
+		inventory[idx]->use(target);
+}
+
