@@ -32,10 +32,15 @@ Character::~Character()
 Character& Character::operator=(const Character& other)
 {
 	for (int i = 0; i < 4; i++)
+	{	
 		if (inventory[i] != NULL)
+		{
 			delete inventory[i];
+			inventory[i] = NULL;
+		}
+	}
 	for (int i = 0; i < 4; i++)
-		if (other.inventory[i] != NULL)
+		if (other.inventory[i] == NULL)
 			inventory[i] = other.inventory[i]->clone();
 	return (*this);
 }
@@ -44,12 +49,24 @@ void Character::equip(AMateria* m)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (inventory[i] != NULL)
+		if (inventory[i] == NULL)
 		{
 			inventory[i] = m;
 			break ;
 		}
 	}
+}
+
+const std::string& Character::getName() const
+{
+	return (name);
+}
+
+AMateria* Character::getMateria(int idx)
+{
+	if (idx >= 0)
+		return (inventory[idx]);
+	return (NULL);
 }
 
 void Character::unequip(int idx)

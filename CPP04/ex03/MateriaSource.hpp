@@ -6,6 +6,11 @@
 class MateriaSource : public IMateriaSource
 {
 public:
+	MateriaSource();
+	MateriaSource(const MateriaSource& other);
+	~MateriaSource();
+
+public:
 	void learnMateria(AMateria* materia);
 	AMateria* createMateria(const std::string& type);
 };
