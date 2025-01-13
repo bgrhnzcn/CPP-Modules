@@ -9,10 +9,12 @@ public:
 	MateriaSource();
 	MateriaSource(const MateriaSource& other);
 	~MateriaSource();
-
+	MateriaSource& operator=(const MateriaSource& other);
 public:
 	void learnMateria(AMateria* materia);
 	AMateria* createMateria(const std::string& type);
+private:
+	AMateria* materias[4];
 };
 
 #endif

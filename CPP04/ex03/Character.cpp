@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "Character.hpp"
 #include "AMateria.hpp"
 
@@ -52,7 +54,7 @@ void Character::equip(AMateria* m)
 		if (inventory[i] == NULL)
 		{
 			inventory[i] = m;
-			break ;
+			return ;
 		}
 	}
 }
@@ -62,7 +64,7 @@ const std::string& Character::getName() const
 	return (name);
 }
 
-AMateria* Character::getMateria(int idx)
+AMateria* Character::getMateria(int idx) const
 {
 	if (idx >= 0)
 		return (inventory[idx]);

@@ -7,14 +7,16 @@
 class Dog : public Animal
 {
 public:
-	virtual void makeSound() const;
+	void makeSound() const;
+	void printIdeas() const;
 public:
 	Dog();
-	Dog(const Dog &other);
+	Dog(const Dog& other);
+	Dog(const std::string& idea);
 	~Dog();
-	Dog &operator=(const Dog &other);
+	Dog& operator=(const Dog& other);
 private:
-	Brain *brain;
+	Brain* brain;
 };
 
 #endif

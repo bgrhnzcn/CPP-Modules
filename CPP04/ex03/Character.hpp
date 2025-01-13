@@ -12,7 +12,7 @@ public:
 	~Character();
 	Character& operator=(const Character& other);
 public:
-	AMateria* getMateria(int idx);
+	AMateria* getMateria(int idx) const;
 	const std::string& getName() const;
 	void equip(AMateria* m);
 	void unequip(int idx);

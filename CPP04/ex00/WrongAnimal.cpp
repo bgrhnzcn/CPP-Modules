@@ -3,7 +3,7 @@
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal()
-	: type("Animal")
+	: type("WrongAnimal")
 {
 	std::cout << "Default constructer for WrongAnimal Class." << std::endl;
 }

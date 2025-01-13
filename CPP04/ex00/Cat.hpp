@@ -6,7 +6,7 @@
 class Cat : public Animal
 {
 public:
-	virtual void makeSound() const;
+	void makeSound() const;
 public:
 	Cat();
 	Cat(const Cat &other);
