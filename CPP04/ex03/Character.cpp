@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "Character.hpp"
 #include "AMateria.hpp"
 
@@ -75,7 +73,6 @@ void Character::unequip(int idx)
 {
 	if (idx >= 0 && inventory[idx] != NULL)
 		inventory[idx] = NULL;
-	// THERE IS LEAK IN THIS LINE //
 }
 
 void Character::use(int idx, ICharacter& target)

@@ -12,6 +12,7 @@ Cat::Cat()
 }
 
 Cat::Cat(const Cat &other)
+	: AAnimal()
 {
 	std::cout << "Copy constructer for Cat Class." << std::endl;
 	brain = new Brain();

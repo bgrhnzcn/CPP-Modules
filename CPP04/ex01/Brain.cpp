@@ -26,9 +26,3 @@ Brain &Brain::operator=(const Brain &other)
 	return (*this);
 }
 
-void Brain::printIdeas() const
-{
-	for (int i = 0; i < 100; i++)
-		std::cout << ideas[i] << std::endl;
-}
-

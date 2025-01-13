@@ -9,6 +9,7 @@ Dog::Dog()
 }
 
 Dog::Dog(const Dog &other)
+	: Animal()
 {
 	std::cout << "Copy constructer for Dog Class." << std::endl;
 	*this = other;

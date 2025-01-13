@@ -3,8 +3,6 @@
 #include "Character.hpp"
 #include "MateriaSource.hpp"
 
-#include <iostream>
-
 int main()
 {
 	{

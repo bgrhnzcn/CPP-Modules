@@ -11,8 +11,6 @@ public:
 	~Brain();
 	Brain &operator=(const Brain &other);
 public:
-	void printIdeas() const;
-public:
 	std::string ideas[100];
 };
 
