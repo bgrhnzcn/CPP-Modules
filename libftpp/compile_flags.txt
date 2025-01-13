@@ -1,0 +1,6 @@
+std=c++2x
+-Wall
+-Wextra
+-Werror
+-I
+./inc
