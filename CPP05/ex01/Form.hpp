@@ -21,6 +21,7 @@ private:
 	const unsigned int signGrade;
 	const unsigned int executeGrade;
 	bool isSigned;
+private:
 	class GradeTooHighException : public std::exception
 	{
 	public:

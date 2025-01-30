@@ -20,6 +20,7 @@ public:
 private:
 	const std::string name;
 	unsigned int grade;
+private:
 	class GradeTooHighException : public std::exception
 	{
 	public:
