@@ -15,8 +15,8 @@ public:
 public:
 	std::string getName() const;
 	unsigned int getGrade() const;
-	void incrementGrade(unsigned int increment);
-	void decrementGrade(unsigned int decrement);
+	void incrementGrade();
+	void decrementGrade();
 private:
 	const std::string name;
 	unsigned int grade;

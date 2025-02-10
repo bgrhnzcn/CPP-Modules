@@ -38,16 +38,16 @@ unsigned int Bureaucrat::getGrade() const
 	return (grade);
 }
 
-void Bureaucrat::incrementGrade(unsigned int increment)
+void Bureaucrat::incrementGrade()
 {
-	grade += increment;
+	grade++;
 	if (grade > 150)
 		throw Bureaucrat::GradeTooHighException();
 }
 
-void Bureaucrat::decrementGrade(unsigned int decrement)
+void Bureaucrat::decrementGrade()
 {
-	grade += decrement;
+	grade--;
 	if (grade < 1)
 		throw Bureaucrat::GradeTooLowException();
 }
