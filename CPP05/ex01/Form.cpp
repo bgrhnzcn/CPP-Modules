@@ -9,9 +9,9 @@ Form::Form(const std::string& name, unsigned int signGrade, unsigned int execute
 	: name(name), signGrade(signGrade), executeGrade(executeGrade)
 {
 	if (this->signGrade > 150 || this->executeGrade > 150)
-		throw Form::GradeTooHighException();
-	if (this->signGrade < 1 || this->executeGrade < 1)
 		throw Form::GradeTooLowException();
+	if (this->signGrade < 1 || this->executeGrade < 1)
+		throw Form::GradeTooHighException();
 }
 
 Form::Form(const Form& other)
@@ -32,9 +32,14 @@ std::string Form::getName() const
 	return (name);
 }
 
-unsigned int Form::getGrade() const
+unsigned int Form::getSignGrade() const
 {
 	return (signGrade);
+}
+
+unsigned int Form::getExecuteGrade() const
+{
+	return (executeGrade);
 }
 
 bool Form::getIsSigned() const
@@ -83,6 +88,6 @@ const char* Form::GradeTooLowException::what() const throw()
 
 std::ostream& operator<<(std::ostream& os, const Form& form)
 {
-	os << form.getName() << std::endl;
+	os << form.getName();
 	return (os);
 }
